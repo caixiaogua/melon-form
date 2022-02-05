@@ -32,4 +32,26 @@ netApi.getTime=function(){
 netApi.getHostName=function(){
 	return System.Net.Dns.GetHostName().ToString();
 }
+
+netApi.readFile=function(f){
+	try{
+		var s=System.IO.File.ReadAllText(f);
+		return s;
+	}catch(e){
+		MessageBox.Show(e);
+	}
+}
+
+netApi.saveFile=function(f,s){
+	try{
+	    var fs=new System.IO.FileStream(f,System.IO.FileMode.Create);	/*打开文件流*/
+	    var sw=new System.IO.StreamWriter(fs,System.Text.Encoding.Default);		/*创建读写器*/
+	    sw.Write(s);	/*读写*/
+	    sw.Close();		/*关闭读写器*/
+	    fs.Close();		/*关闭文件流*/
+		return true;
+	}catch(e){
+		MessageBox.Show(e);
+	}
+}
 ```
