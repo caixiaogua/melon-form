@@ -55,3 +55,44 @@ netApi.saveFile=function(f,s){
 	}
 }
 ```
+
+### main.htm
+```
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+
+<body style="margin:0;padding:0;border:0;">
+<div id="app">msg</div>
+<div>
+	<input type="text" id="v1">
+	<button id="btn1">添加</button>
+</div>
+</body>
+
+<script language="javascript">
+// window.external.width=900;
+let dbfile="db.json";
+let netApi=window.external.netApi;
+let time=netApi.getTime();
+let hostname=netApi.getHostName();
+let dbstr=netApi.readFile(dbfile);
+let db=JSON.parse(dbstr);
+let dbShow=function(){
+	app.innerHTML=time+"<br>"+hostname+"<br>"+db.join("<br>");
+};
+btn1.onclick=function(){
+	if(!db||!db.map)db=[];
+	db.push(v1.value);
+	v1.value="";
+	netApi.saveFile(dbfile, JSON.stringify(db));
+	dbShow();
+};
+dbShow();
+</script>
+
+</html>
+```
