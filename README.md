@@ -7,7 +7,7 @@ Create winform application with .net and javascript
 ### UI可使用WebForm（html+css），也可使用原生WinForm控件，随心所欲。
 
 ## 接口说明
-
+### net.js
 ```
 //使用js编写接口，可调用.net库
 
@@ -62,7 +62,7 @@ netApi.saveFile=function(f,s){
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
 
 <body style="margin:0;padding:0;border:0;">
