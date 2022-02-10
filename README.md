@@ -6,6 +6,9 @@ Create winform application with .net and javascript
 ### 使用javascript调用.net库，编写接口，配合html+css编写UI，轻松创建windows form应用程序。
 ### UI可使用WebForm（html+css），也可使用原生WinForm控件，随心所欲。
 
+### v2.0说明
+#### 剥离main.htm为可选文件，所有程序代码整合到net.js中
+
 ## 接口说明
 ### net.js
 ```
@@ -23,6 +26,22 @@ MaximizeBox=false;  //是否允许最大化窗口
 // var b=new TextBox();     //创建WinForm原生文本框
 // a.Text="Click Me";       //给原生控件添加属性，请参考微软相关文档
 // this.Controls.Add(a);    //将控件添加到窗体中
+
+// webApi为webform浏览器函数集，上下文环境为window
+
+webApi.main=function(){
+	window.external.netApi.init();
+	alert("Are you OK?");
+	document.write("<h2>WebForm初始化完成</h2>")
+}
+
+// netApi为dotnet框架接口函数集，上下文环境为.net framework或netcore
+
+netApi.init=function(){
+	browser.Document.Write("正在载入......");
+	// browser.Navigate(Application.StartupPath + "/main.htm");
+	// browser.Navigate("http://www.baidu.com/");
+}
 
 //创建接口函数，可任意调用.net类库，在此定义的函数可在main.htm中使用
 netApi.getTime=function(){
