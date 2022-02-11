@@ -3,7 +3,7 @@ Create winform application with .net and javascript
 
 
 ## 简介
-### 使用javascript调用.net库，编写接口，配合html+css编写UI，轻松创建windows form应用程序。
+### 使用javascript调用.net库，轻松创建windows form应用程序。
 ### UI可使用WebForm（html+css），也可使用原生WinForm控件，随心所欲。
 
 ### v2.0说明
@@ -25,7 +25,7 @@ MaximizeBox=false;  //是否允许最大化窗口
 // var a=new Button();      //创建WinForm原生按钮
 // var b=new TextBox();     //创建WinForm原生文本框
 // a.Text="Click Me";       //给原生控件添加属性，请参考微软相关文档
-// this.Controls.Add(a);    //将控件添加到窗体中
+// Controls.Add(a);    	    //将控件添加到窗体中
 
 // webApi为webform浏览器函数集，上下文环境为window
 
