@@ -6,11 +6,17 @@ Create winform application with .net and javascript
 ### 使用javascript调用.net库，轻松创建windows form应用程序。
 ### UI可使用WebForm（html+css），也可使用原生WinForm控件，随心所欲。
 ### v3.0更新：
-#### 使用LoadFunc()方法，可直接导入外部DLL文件中的函数
+```
+使用LoadFunc()方法，可直接导入外部DLL文件中的函数
+```
 ### v2.1说明：
-#### 自动使用系统中最新的web和js引擎
+```
+自动使用系统中最新的web和js引擎
+```
 ### v2.0说明：
-#### 剥离main.htm为可选文件，所有程序代码整合到net.js中
+```
+剥离main.htm为可选文件，所有程序代码整合到net.js中
+```
 
 ## 接口说明
 ### net.js
