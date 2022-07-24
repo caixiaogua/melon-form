@@ -8,7 +8,7 @@ Create winform application with .net and javascript
 
 ```
 ### v3.0更新：
-使用LoadFunc()方法，可直接导入外部DLL文件中的函数
+使用LoadFunc()方法，可直接导入外部DLL文件中的类或方法
 
 ### v2.1说明：
 自动使用系统中最新的web和js引擎
