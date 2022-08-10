@@ -18,6 +18,11 @@ var add2=netApi.LoadClib("c_add64.dll","int add(int a,int b)");
 var res2=add2(33,66);
 MessageBox.Show("来自C-DLL的结果: "+res2);
 
+//LoadFromCs(文件)可以导入C#源文件中的类（依赖于link.dll）
+var importClass=LoadFromCs("add.cs");
+var res3=importClass.add(123,456);
+MessageBox.Show("来自add.cs的结果: "+res3);
+
 ### v2.1说明：
 自动使用系统中最新的web和js引擎
 
