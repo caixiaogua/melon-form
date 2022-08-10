@@ -14,7 +14,7 @@ var res=add(23,32);
 MessageBox.Show("来自net-DLL的结果: "+res);
 
 //LoadClib(文件,接口描述)可引用C编译的通用DLL（64位）文件（依赖于link.dll）
-var add2=netApi.LoadClib("c_add64.dll","int add(int a,int b)");
+var add2=LoadClib("c_add64.dll","int add(int a,int b)");
 var res2=add2(33,66);
 MessageBox.Show("来自C-DLL的结果: "+res2);
 
