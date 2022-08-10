@@ -8,12 +8,12 @@ Create winform application with .net and javascript
 
 ```
 ### v3.0更新：
-//LoadFunc(文件,类名,方法名)可导入C#编译的DLL文件，第三参数为空则返回类
+//LoadFunc(文件,类名,方法名)可导入C#编译的DLL文件，若第三参数为空（""）则返回类
 var add=LoadFunc("add.dll","addclass","add");
 var res=add(23,32);
 MessageBox.Show("来自net-DLL的结果: "+res);
 
-//netApi.LoadClib(文件,接口描述)可引用C编译的通用DLL文件（依赖于link.dll）
+//netApi.LoadClib(文件,接口描述)可引用C编译的通用DLL（64位）文件（依赖于link.dll）
 var add2=netApi.LoadClib("c_add64.dll","int add(int a,int b)");
 var res2=add2(33,66);
 MessageBox.Show("来自C-DLL的结果: "+res2);
