@@ -8,7 +8,7 @@ Create winform application with .net and javascript
 
 ```
 ### v3.0更新：
-//LoadFunc(文件,类名,方法名)可导入C#编译的DLL文件，若第三参数为空（""）则返回类
+//LoadFunc(文件,类名,方法名)可导入C#编译的DLL文件，若第三参数为空则返回类
 var add=LoadFunc("add.dll","addclass","add");
 var res=add(23,32);
 MessageBox.Show("来自net-DLL的结果: "+res);
@@ -48,16 +48,21 @@ MaximizeBox=false;  //是否允许最大化窗口
 // a.Text="Click Me";       //给原生控件添加属性，请参考微软相关文档
 // Controls.Add(a);    	    //将控件添加到窗体中
 
-// webApi为webform浏览器函数集，上下文环境为window
-
+// webApi.main为webform浏览器初始化函数，上下文环境为window
 webApi.main=function(){
 	window.external.netApi.init();
-	alert("Are you OK?");
-	document.write("<h2>WebForm初始化完成</h2>")
+	// alert("Are you OK?");
+	// document.write("<h2>WebForm初始化完成</h2>");
+	document.write('<div id="app"></div>');
+	var arr=[
+		'<input id="input1" value="username">',
+		'<button id="btn1">click</button>'
+	];
+	app.innerHTML=arr.join("");
+	btn1.onclick=function(){alert("value: "+input1.value);};
 }
 
-// netApi为dotnet框架接口函数集，上下文环境为.net framework或netcore
-
+// netApi为dotnet框架接口函数集，上下文环境为.net framework
 netApi.init=function(){
 	browser.Document.Write("正在载入......");
 	// browser.Navigate(Application.StartupPath + "/main.htm");
